@@ -1,0 +1,2426 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Feb 7, 2023 07:09:03 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@tag</a></li>
+					<li><a href='#'>@tag1</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='70.588%'><span class='strong'>12</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='23.529%'>4</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='5.882%'>1</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='70.588%'><span class='strong'>12</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='23.529%'>4</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='5.882%'>1</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='86.344%'><span class='strong'>196</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='1.762%'>4</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='11.894%'>27</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:09:03 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@tag1</span>
+	</div>
+	<span class='duration right label'>0h 0m 17s+163ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Login Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given user open browser with url</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user should see login page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user enter username as password as and click login</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user should see home page (verticals page)</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When user clik logout</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='8' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then user should see login page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And user click on close browser</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Add new Vertical Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:09:21 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='11' status='pass'>
+	<span class='duration right label'>0h 0m 52s+435ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Create New Vertical Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='12' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Create New Vertical Test</span>
+			
+				<ul class='steps'>
+					<li test-id='13' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='14' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='15' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='16' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on add vertical</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='17' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter vertical name as "Create new Vertical test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='18' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter vertical short text as "Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='19' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter vertical description as "Testing create new vertical feature"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='20' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select time range as "Daily"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='21' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select value range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='22' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select data range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='23' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select trend range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='24' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select context range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='25' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select contributors range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='26' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select recomended actions range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='27' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select prediction range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='28' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='29' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see vertical created as "Create new Vertical test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='30' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='31' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='32' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit existing Vertical Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:10:13 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='34' status='fail'>
+	<span class='duration right label'>0h 1m 1s+667ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Edit existing Vertical Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='35' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Edit existing Vertical Test</span>
+			
+				<ul class='steps'>
+					<li test-id='36' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='37' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='38' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='39' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on edit vertical "Create new Vertical test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='40' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new vertical name as "Edit new Vertical test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='41' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new vertical short text as "Test Edit"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='42' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new vertical description as "Testing Edit Vertical"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='43' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select time range as "Hour"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='44' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select value range as "MONTHLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='45' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select data range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='46' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select trend range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='47' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select context range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='48' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select contributors range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='49' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select recomended actions range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='50' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select prediction range as "WEEKLY"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='51' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='52' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then user should see modified vertical "Edit new Vertical test"</span>
+							<div class='pre'><pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_should_see_modified_vertical(PreCofigLibrary.java:183)
+	at ?.Then user should see modified vertical "Edit new Vertical test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/editvertical.feature:23)
+</pre></div>
+					</li>
+					<li test-id='53' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='54' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='55' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf skip' status='skip' bdd='true' test-id='56'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete existing Vertical Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:11:15 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='57' status='skip'>
+	<span class='duration right label'>0h 0m 12s+939ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Delete existing Vertical Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='58' class='node scenario skip' status='skip'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Delete existing Vertical Test</span>
+			
+				<ul class='steps'>
+					<li test-id='59' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='60' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='61' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='62' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search vertical to delete "Create new Vertical test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='63' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user click on delete vertical</span>
+							<div class='pre'>undefined</div>
+					</li>
+					<li test-id='64' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then user should see vertical deleted "Create new Vertical test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='65' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='66' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='67'>
+					<div class='test-heading'>
+						<span class='test-name'>Add new Function Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:11:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='68' status='pass'>
+	<span class='duration right label'>0h 0m 41s+101ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Create New Function Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='69' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Create New Function Test</span>
+			
+				<ul class='steps'>
+					<li test-id='70' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='71' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='72' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='73' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on functions from menu</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='74' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on add function</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='75' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter function name as "Create new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='76' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter function short text as "Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='77' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter function description as "Testing create new Function feature"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='78' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save function</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='79' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user search function "Create new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='80' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see function created as "Create new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='81' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='82' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='83'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit existing Function Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:12:09 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='84' status='pass'>
+	<span class='duration right label'>0h 0m 57s+720ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Edit existing Function Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='85' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Edit existing Function Test</span>
+			
+				<ul class='steps'>
+					<li test-id='86' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='87' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='88' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='89' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on functions from menu</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='90' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user search function "Create new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='91' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on edit function "Create new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='92' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new function name as "Edit new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='93' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new function short text as "Test Edit"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='94' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new function description as "Testing Edit Functionality"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='95' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save function</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='96' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user search function "Edit new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='97' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see function created as "Edit new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='98' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='99' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='100'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete existing Function Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:13:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='101' status='pass'>
+	<span class='duration right label'>0h 0m 42s+403ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Delete existing Function Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='102' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Delete existing Function Test</span>
+			
+				<ul class='steps'>
+					<li test-id='103' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='104' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='105' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='106' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on functions from menu</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='107' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user search function to delete "Edit new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='108' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on delete function</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='109' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see function deleted "Edit new Function test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='110' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='111' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='112'>
+					<div class='test-heading'>
+						<span class='test-name'>Add Function to Vertical Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:13:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='113' status='pass'>
+	<span class='duration right label'>0h 0m 52s+863ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Add Function to Vertical Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='114' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Add Function to Vertical Test</span>
+			
+				<ul class='steps'>
+					<li test-id='115' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='116' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='117' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='118' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on functions from menu</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='119' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user search function "Testing 231"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='120' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user read the count of actual verticals linked to function</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='121' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click action against function</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='122' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user select vertical "Quintess"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='123' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click close the popup</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='124' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user search function "Testing 231"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='125' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see the verticals count updated</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='126' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='127' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='128'>
+					<div class='test-heading'>
+						<span class='test-name'>Add new Node Type Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:14:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='129' status='pass'>
+	<span class='duration right label'>0h 0m 39s+971ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Create New Node Type Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='130' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Create New Node Type Test</span>
+			
+				<ul class='steps'>
+					<li test-id='131' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='132' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='133' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='134' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on node type tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='135' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on add node type</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='136' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter node type name as "Create new Node test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='137' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter node type short text as "Test Node"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='138' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter node type description as "Testing create new Node feature"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='139' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save node type</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='140' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for node type name "Create new Node test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='141' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see node type created as "Create new Node test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='142' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='143' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='144'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit existing Node Type Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:15:23 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='145' status='pass'>
+	<span class='duration right label'>0h 0m 58s+111ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Edit existing Node Type Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='146' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Edit existing Node Type Test</span>
+			
+				<ul class='steps'>
+					<li test-id='147' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='148' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='149' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='150' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on node type tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='151' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for node type name "Create new Node test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='152' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on edit node type</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='153' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new node type name as "Edit new Node Type test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='154' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new node type short text as "Test Edit"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='155' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new node type description as "Testing Edit Functionality"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='156' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save node type</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='157' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for node type name "Edit new Node Type test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='158' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see node type created as "Edit new Node Type test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='159' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='160' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='161'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete existing Node Type Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:16:21 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='162' status='pass'>
+	<span class='duration right label'>0h 0m 43s+650ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Delete existing Node Type Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='163' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Delete existing Node Type Test</span>
+			
+				<ul class='steps'>
+					<li test-id='164' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='165' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='166' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='167' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on node type tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='168' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for node type name "Edit new Node Type test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='169' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on delete node type</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='170' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for node type name "Edit new Node Type test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='171' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see node type deleted "Edit new Node Type test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='172' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='173' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='174'>
+					<div class='test-heading'>
+						<span class='test-name'>Add New Attribute Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:17:04 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='175' status='pass'>
+	<span class='duration right label'>0h 0m 54s+441ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Create New Attribute Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='176' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Create New Attribute Test</span>
+			
+				<ul class='steps'>
+					<li test-id='177' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='178' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='179' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='180' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='181' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on add attribute</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='182' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute name as "Create new Attribute test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='183' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute short text as "Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='184' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute data type "String"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='185' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute description as "Testing create Attribute feature"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='186' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute default value as "Default"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='187' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save attribute</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='188' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute name "Create new Attribute test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='189' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see attribute created as "Create new Attribute test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='190' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='191' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='192'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit Existing Attribute Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:17:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='193' status='pass'>
+	<span class='duration right label'>0h 1m 10s+578ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Edit Existing Attribute Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='194' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Edit Existing Attribute Test</span>
+			
+				<ul class='steps'>
+					<li test-id='195' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='196' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='197' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='198' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='199' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute name "Create new Attribute test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='200' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on edit attribute</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='201' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute name as "Test Edit Attribute Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='202' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute short text as "Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='203' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute data type "Integer"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='204' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute description as "Testing Edit Attribute feature"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='205' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute default value as "NA"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='206' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save attribute</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='207' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute name "Test Edit Attribute Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='208' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see attribute created as "Test Edit Attribute Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='209' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='210' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='211'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete existing Attribute Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:19:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='212' status='pass'>
+	<span class='duration right label'>0h 0m 44s+874ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Delete existing Attribute Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='213' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Delete existing Attribute Test</span>
+			
+				<ul class='steps'>
+					<li test-id='214' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='215' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='216' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='217' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='218' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute name "Test Edit Attribute Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='219' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on delete attribute</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='220' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute name "Test Edit Attribute Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='221' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see attribute deleted "Test Edit Attribute Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='222' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='223' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='224'>
+					<div class='test-heading'>
+						<span class='test-name'>Add New Attribute Group Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:19:54 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='225' status='fail'>
+	<span class='duration right label'>0h 1m 6s+42ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Create New Attribute Group Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='226' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Create New Attribute Group Test</span>
+			
+				<ul class='steps'>
+					<li test-id='227' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='228' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='229' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='230' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='231' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute group tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='232' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on add attribute group</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='233' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute group name as "Create new Attribute group test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='234' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute group short text as "Test"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='235' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user enter attribute group description as "Testing create Attribute Group feature"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='236' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user node type from dropdown "KPI"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='237' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And user clik on save attribute</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='238' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute group tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='239' class='node and fail' status='fail'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute group name "Create new Attribute group test"</span>
+							<div class='pre'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-UHORISU', ip: '192.168.29.146', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52779}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 479f637a4cb9ec6baaa18daa902b9379
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
+	at ?.And user search for attribute group name "Create new Attribute group test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/addattributegroup.feature:19)
+</pre></div>
+					</li>
+					<li test-id='240' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then user should see attribute group created as "Create new Attribute group test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='241' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='242' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='243'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit Existing Attribute Group Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:21:01 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='244' status='fail'>
+	<span class='duration right label'>0h 0m 46s+690ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Edit Existing Attribute Group Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='245' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Edit Existing Attribute Group Test</span>
+			
+				<ul class='steps'>
+					<li test-id='246' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='247' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='248' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='249' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='250' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute group tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='251' class='node and fail' status='fail'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute group name "Create new Attribute group test"</span>
+							<div class='pre'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-UHORISU', ip: '192.168.29.146', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52828}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0148d3613509003966579fe5b5ca99a9
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
+	at ?.And user search for attribute group name "Create new Attribute group test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/editattributegroup.feature:12)
+</pre></div>
+					</li>
+					<li test-id='252' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click edit attribute group</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='253' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute group name as "Edit Attribute group test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='254' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute group short text as "Test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='255' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user enter new attribute group description as "Testing Edit Attribute Group feature"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='256' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user node type from dropdown "KPI"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='257' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user clik on save attribute</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='258' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute group tab</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='259' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute group name "Edit Attribute group test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='260' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then user should see attribute group created as "Edit Attribute group test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='261' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='262' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='263'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete Existing Attribute Group Test Case</span>
+						<span class='test-time'>Feb 7, 2023 07:21:47 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='264' status='fail'>
+	<span class='duration right label'>0h 0m 46s+66ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Delete Edit Existing Attribute Group Test</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='265' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@tag</span>
+				<span class='category label white-text'>@tag1</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Delete Edit Existing Attribute Group Test</span>
+			
+				<ul class='steps'>
+					<li test-id='266' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given user open browser with url</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='267' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user should see login page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='268' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user enter username as password as and click login</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='269' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='270' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute group tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='271' class='node and fail' status='fail'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute group name "Edit Attribute group test"</span>
+							<div class='pre'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-UHORISU', ip: '192.168.29.146', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52869}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0e4cc43d67a0e2a4b964a508deb0ba1c
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
+	at ?.And user search for attribute group name "Edit Attribute group test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/deleteattributegroup.feature:12)
+</pre></div>
+					</li>
+					<li test-id='272' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click delete attribute group</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='273' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user click on attribute group tab</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='274' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user search for attribute group name "Edit Attribute group test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='275' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then user should see attribute group deleted "Edit Attribute group test"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='276' class='node when skip' status='skip'><b>When</b>
+						<span class="bdd-step-name">When user clik logout</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='277' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And user click on close browser</span>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@tag</span>
+						<span class='category-status right'>
+							<span class='label pass'>21</span>
+							<span class='label fail'>8</span>
+							<span class='label others'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 21</span>
+							<span class='label red lighten-1 white-text'>Failed: 8</span>
+							<span class='label yellow darken-2 white-text'>Others: 2</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 7, 2023 07:09:03 PM</td>
+										<td class='linked' test-id='1'>Login Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:09:21 PM</td>
+										<td class='linked' test-id='10'>Add new Vertical Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:09:21 PM</td>
+										<td class='linked' test-id='12'>Add new Vertical Test Case.Create New Vertical Test.Create New Vertical Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:10:13 PM</td>
+										<td class='linked' test-id='33'>Edit existing Vertical Test Case</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:10:13 PM</td>
+										<td class='linked' test-id='35'>Edit existing Vertical Test Case.Edit existing Vertical Test.Edit existing Vertical Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:11:15 PM</td>
+										<td class='linked' test-id='56'>Delete existing Vertical Test Case</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:11:15 PM</td>
+										<td class='linked' test-id='58'>Delete existing Vertical Test Case.Delete existing Vertical Test.Delete existing Vertical Test</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:11:28 PM</td>
+										<td class='linked' test-id='67'>Add new Function Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:11:28 PM</td>
+										<td class='linked' test-id='69'>Add new Function Test Case.Create New Function Test.Create New Function Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:12:09 PM</td>
+										<td class='linked' test-id='83'>Edit existing Function Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:12:09 PM</td>
+										<td class='linked' test-id='85'>Edit existing Function Test Case.Edit existing Function Test.Edit existing Function Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:13:07 PM</td>
+										<td class='linked' test-id='100'>Delete existing Function Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:13:07 PM</td>
+										<td class='linked' test-id='102'>Delete existing Function Test Case.Delete existing Function Test.Delete existing Function Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:14:42 PM</td>
+										<td class='linked' test-id='128'>Add new Node Type Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:14:42 PM</td>
+										<td class='linked' test-id='130'>Add new Node Type Test Case.Create New Node Type Test.Create New Node Type Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:15:23 PM</td>
+										<td class='linked' test-id='144'>Edit existing Node Type Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:15:23 PM</td>
+										<td class='linked' test-id='146'>Edit existing Node Type Test Case.Edit existing Node Type Test.Edit existing Node Type Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:16:21 PM</td>
+										<td class='linked' test-id='161'>Delete existing Node Type Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:16:21 PM</td>
+										<td class='linked' test-id='163'>Delete existing Node Type Test Case.Delete existing Node Type Test.Delete existing Node Type Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:17:04 PM</td>
+										<td class='linked' test-id='174'>Add New Attribute Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:17:04 PM</td>
+										<td class='linked' test-id='176'>Add New Attribute Test Case.Create New Attribute Test.Create New Attribute Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:17:59 PM</td>
+										<td class='linked' test-id='192'>Edit Existing Attribute Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:17:59 PM</td>
+										<td class='linked' test-id='194'>Edit Existing Attribute Test Case.Edit Existing Attribute Test.Edit Existing Attribute Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:19:10 PM</td>
+										<td class='linked' test-id='211'>Delete existing Attribute Test Case</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:19:10 PM</td>
+										<td class='linked' test-id='213'>Delete existing Attribute Test Case.Delete existing Attribute Test.Delete existing Attribute Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:19:54 PM</td>
+										<td class='linked' test-id='224'>Add New Attribute Group Test Case</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:19:54 PM</td>
+										<td class='linked' test-id='226'>Add New Attribute Group Test Case.Create New Attribute Group Test.Create New Attribute Group Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:21:01 PM</td>
+										<td class='linked' test-id='243'>Edit Existing Attribute Group Test Case</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:21:01 PM</td>
+										<td class='linked' test-id='245'>Edit Existing Attribute Group Test Case.Edit Existing Attribute Group Test.Edit Existing Attribute Group Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:21:47 PM</td>
+										<td class='linked' test-id='263'>Delete Existing Attribute Group Test Case</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:21:47 PM</td>
+										<td class='linked' test-id='265'>Delete Existing Attribute Group Test Case.Delete Edit Existing Attribute Group Test.Delete Edit Existing Attribute Group Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@tag1</span>
+						<span class='category-status right'>
+							<span class='label pass'>12</span>
+							<span class='label fail'>4</span>
+							<span class='label others'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 12</span>
+							<span class='label red lighten-1 white-text'>Failed: 4</span>
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 7, 2023 07:09:03 PM</td>
+										<td class='linked' test-id='2'>Login Test Case.Login Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:09:21 PM</td>
+										<td class='linked' test-id='12'>Add new Vertical Test Case.Create New Vertical Test.Create New Vertical Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:10:13 PM</td>
+										<td class='linked' test-id='35'>Edit existing Vertical Test Case.Edit existing Vertical Test.Edit existing Vertical Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:11:15 PM</td>
+										<td class='linked' test-id='58'>Delete existing Vertical Test Case.Delete existing Vertical Test.Delete existing Vertical Test</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:11:28 PM</td>
+										<td class='linked' test-id='69'>Add new Function Test Case.Create New Function Test.Create New Function Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:12:09 PM</td>
+										<td class='linked' test-id='85'>Edit existing Function Test Case.Edit existing Function Test.Edit existing Function Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:13:07 PM</td>
+										<td class='linked' test-id='102'>Delete existing Function Test Case.Delete existing Function Test.Delete existing Function Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:13:50 PM</td>
+										<td class='linked' test-id='114'>Add Function to Vertical Test Case.Add Function to Vertical Test.Add Function to Vertical Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:14:42 PM</td>
+										<td class='linked' test-id='130'>Add new Node Type Test Case.Create New Node Type Test.Create New Node Type Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:15:23 PM</td>
+										<td class='linked' test-id='146'>Edit existing Node Type Test Case.Edit existing Node Type Test.Edit existing Node Type Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:16:21 PM</td>
+										<td class='linked' test-id='163'>Delete existing Node Type Test Case.Delete existing Node Type Test.Delete existing Node Type Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:17:04 PM</td>
+										<td class='linked' test-id='176'>Add New Attribute Test Case.Create New Attribute Test.Create New Attribute Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:17:59 PM</td>
+										<td class='linked' test-id='194'>Edit Existing Attribute Test Case.Edit Existing Attribute Test.Edit Existing Attribute Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:19:10 PM</td>
+										<td class='linked' test-id='213'>Delete existing Attribute Test Case.Delete existing Attribute Test.Delete existing Attribute Test</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:19:54 PM</td>
+										<td class='linked' test-id='226'>Add New Attribute Group Test Case.Create New Attribute Group Test.Create New Attribute Group Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:21:01 PM</td>
+										<td class='linked' test-id='245'>Edit Existing Attribute Group Test Case.Edit Existing Attribute Group Test.Edit Existing Attribute Group Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 7, 2023 07:21:47 PM</td>
+										<td class='linked' test-id='265'>Delete Existing Attribute Group Test Case.Delete Edit Existing Attribute Group Test.Delete Edit Existing Attribute Group Test</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.AssertionError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Feb 7, 2023 07:11:11 PM</td>
+                                                        <td class='linked' test-id='52'>Edit existing Vertical Test Case.Edit existing Vertical Test.Edit existing Vertical Test.Then user should see modified vertical "Edit new Vertical test"</td>
+                                                        <td><pre><pre>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_should_see_modified_vertical(PreCofigLibrary.java:183)
+	at ?.Then user should see modified vertical "Edit new Vertical test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/editvertical.feature:23)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.ElementNotInteractableException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>3</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Feb 7, 2023 07:20:28 PM</td>
+                                                        <td class='linked' test-id='239'>Add New Attribute Group Test Case.Create New Attribute Group Test.Create New Attribute Group Test.And user search for attribute group name "Create new Attribute group test"</td>
+                                                        <td><pre><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-UHORISU', ip: '192.168.29.146', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52779}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 479f637a4cb9ec6baaa18daa902b9379
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
+	at ?.And user search for attribute group name "Create new Attribute group test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/addattributegroup.feature:19)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feb 7, 2023 07:21:15 PM</td>
+                                                        <td class='linked' test-id='251'>Edit Existing Attribute Group Test Case.Edit Existing Attribute Group Test.Edit Existing Attribute Group Test.And user search for attribute group name "Create new Attribute group test"</td>
+                                                        <td><pre><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-UHORISU', ip: '192.168.29.146', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52828}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0148d3613509003966579fe5b5ca99a9
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
+	at ?.And user search for attribute group name "Create new Attribute group test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/editattributegroup.feature:12)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feb 7, 2023 07:22:01 PM</td>
+                                                        <td class='linked' test-id='271'>Delete Existing Attribute Group Test Case.Delete Edit Existing Attribute Group Test.Delete Edit Existing Attribute Group Test.And user search for attribute group name "Edit Attribute group test"</td>
+                                                        <td><pre><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-UHORISU', ip: '192.168.29.146', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52869}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0e4cc43d67a0e2a4b964a508deb0ba1c
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at sun.reflect.GeneratedMethodAccessor26.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
+	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
+	at ?.And user search for attribute group name "Edit Attribute group test"(C:/Selenium/PreConfig/src/main/java/com/qa/features/deleteattributegroup.feature:12)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>17</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>17</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>227</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Feb 7, 2023 07:09:03 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Feb 7, 2023 07:22:33 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 13m 30s+356ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@tag</td>
+							<td>21</td>
+							<td>8</td>
+							<td>2</td>
+							<td>
+									67.742%
+							</td>
+						</tr>
+						<tr>
+							<td>@tag1</td>
+							<td>12</td>
+							<td>4</td>
+							<td>1</td>
+							<td>
+									70.588%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 12,
+				failParent: 4,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 1,
+				exceptionsParent: 5,
+				
+				passChild: 12,
+				failChild: 4,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 1,
+				infoChild: 0,
+				exceptionsChild: 5,
+				
+				passGrandChild: 196,
+				failGrandChild: 4,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 27,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 31,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

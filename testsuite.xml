@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Pre-Cofig Test Suite">
+
+	<test name="Login Test Case">
+		<classes>
+			<class name="testrunners.LoginTestCase"></class>
+		</classes>
+	</test>
+	<test name="Create Vertical Test Case">
+		<classes>
+			<class name="testrunners.AddNewVerticalTestCase"></class>
+		</classes>
+	</test>
+	<test name="Edit existing Vertical Test Case">
+		<classes>
+			<class name="testrunners.EditVerticalTestCase"></class>
+		</classes>
+	</test>
+	<test name="Delete existing Vertical Test Case">
+		<classes>
+			<class name="testrunners.DeleteVerticalTestCase"></class>
+		</classes>
+	</test>
+	<test name="Create new Function Test Case">
+		<classes>
+			<class name="testrunners.AddNewFunctionTestCase"></class>
+		</classes>
+	</test>
+	<test name="Edit existing Function Test Case">
+		<classes>
+			<class name="testrunners.EditFunctionTestCase"></class>
+		</classes>
+	</test>
+	<test name="Delete existing Function Test Case">
+		<classes>
+			<class name="testrunners.DeleteFunctionTestCase"></class>
+		</classes>
+	</test>
+	<test name="Add Function to vertical Test Case">
+		<classes>
+			<class name="testrunners.LinkFunctionToVertical"></class>
+		</classes>
+	</test>
+	<test name="Create new Node Type Test Case">
+		<classes>
+			<class name="testrunners.AddNewNodeTypeTestCase"></class>
+		</classes>
+	</test>
+	<test name="Edit existing Node Type Test Case">
+		<classes>
+			<class name="testrunners.EditNodeTypeTestcase"></class>
+		</classes>
+	</test>
+	<test name="Delete existing Node Type Test Case">
+		<classes>
+			<class name="testrunners.DeleteNodeTypeTestCase"></class>
+		</classes>
+	</test>
+	<test name="Creat New Attribute Test Case">
+		<classes>
+			<class name="testrunners.AddNewAttributeTestCase"></class>
+		</classes>
+	</test>
+	<test name="Edit existing Attribute Test Case">
+		<classes>
+			<class name="testrunners.EditAttributeTestCase"></class>
+		</classes>
+	</test>
+	<test name="Delete existing Attribute Test Case">
+		<classes>
+			<class name="testrunners.DeleteAttributeTestCase"></class>
+		</classes>
+	</test>
+	<test name="Creat New Attribute Group Test Case">
+		<classes>
+			<class name="testrunners.AddNewAttributeGroupTestCase"></class>
+		</classes>
+	</test>
+	<test name="Edit existing Attribute Group Test Case">
+		<classes>
+			<class name="testrunners.EditAttributeGroupTestCase"></class>
+		</classes>
+	</test>
+	<test name="Delete existing Attribute Group Test Case">
+		<classes>
+			<class name="testrunners.DeleteAttributeGroupTestCase"></class>
+		</classes>
+	</test>
+	
+	
+</suite>
