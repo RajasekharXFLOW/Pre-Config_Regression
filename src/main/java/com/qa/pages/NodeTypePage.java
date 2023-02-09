@@ -76,7 +76,7 @@ public class NodeTypePage extends TestBase
 	}
 	public void search_node_name(String node_name) throws InterruptedException
 	{
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		search_node_type_name.sendKeys(node_name);
 	}
 	public boolean isNodeCreated(String expected_node_name) throws InterruptedException
@@ -137,6 +137,7 @@ public class NodeTypePage extends TestBase
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",delete_button);
 		Thread.sleep(2000);
+		driver.navigate().refresh();
 		//confirm_delete_button.click();
 	}
 	public boolean isNodeTypeDeleted(String node_name) throws InterruptedException

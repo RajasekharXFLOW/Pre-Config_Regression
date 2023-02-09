@@ -12,26 +12,4 @@
       </class> <!-- testrunners.EditVerticalTestCase -->
     </classes>
   </test> <!-- Edit existing Vertical Test Case(failed) -->
-  <test name="Delete existing Vertical Test Case(failed)">
-    <classes>
-      <class name="testrunners.DeleteVerticalTestCase">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testrunners.DeleteVerticalTestCase -->
-    </classes>
-  </test> <!-- Delete existing Vertical Test Case(failed) -->
-  <test name="Delete existing Attribute Group Test Case(failed)">
-    <classes>
-      <class name="testrunners.DeleteAttributeGroupTestCase">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testrunners.DeleteAttributeGroupTestCase -->
-    </classes>
-  </test> <!-- Delete existing Attribute Group Test Case(failed) -->
 </suite> <!-- Failed suite [Pre-Cofig Test Suite] -->
