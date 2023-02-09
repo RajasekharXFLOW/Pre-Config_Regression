@@ -607,9 +607,33 @@ public class PreCofigLibrary extends TestBase
 	}
 	
 	@Then("^user should see attribute group deleted \"([^\"]*)\"$")
-	public void user_should_see_attribute_group_deleted(String arg1) throws Throwable 
+	public void user_should_see_attribute_group_deleted(String att_grp_name) throws Throwable 
+	{
+	    boolean res = att_page.IsAttGroupDeleted(att_grp_name);
+	    Assert.assertFalse(res);
+	}
+	@When("^user read the count of no attributes against the attribute group$")
+	public void user_read_the_count_of_no_attributes_against_the_attribute_group() throws Throwable 
 	{
 	    
+	}
+
+	@When("^user click actions against attribute group$")
+	public void user_click_actions_against_attribute_group() throws Throwable 
+	{
+	    
+	}
+
+	@When("^user select required attribute in popup window \"([^\"]*)\"$")
+	public void user_select_required_attribute_in_popup_window(String arg1) throws Throwable 
+	{
+	   
+	}
+
+	@Then("^user should see the count updated$")
+	public void user_should_see_the_count_updated() throws Throwable 
+	{
+	   
 	}
 }	
 

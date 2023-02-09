@@ -23,28 +23,6 @@
       </class> <!-- testrunners.DeleteVerticalTestCase -->
     </classes>
   </test> <!-- Delete existing Vertical Test Case(failed) -->
-  <test name="Creat New Attribute Group Test Case(failed)">
-    <classes>
-      <class name="testrunners.AddNewAttributeGroupTestCase">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testrunners.AddNewAttributeGroupTestCase -->
-    </classes>
-  </test> <!-- Creat New Attribute Group Test Case(failed) -->
-  <test name="Edit existing Attribute Group Test Case(failed)">
-    <classes>
-      <class name="testrunners.EditAttributeGroupTestCase">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- testrunners.EditAttributeGroupTestCase -->
-    </classes>
-  </test> <!-- Edit existing Attribute Group Test Case(failed) -->
   <test name="Delete existing Attribute Group Test Case(failed)">
     <classes>
       <class name="testrunners.DeleteAttributeGroupTestCase">

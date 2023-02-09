@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">17 methods, 5 failed,   12 passed</span>
+                    <span class="method-stats">17 methods, 3 failed,   14 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -108,16 +108,6 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Pre-Cofig_Test_Suite" title="testrunners.DeleteVerticalTestCase" hash-for-method="feature(Delete existing Vertical Test Case)">feature(Delete existing Vertical Test Case)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Pre-Cofig_Test_Suite" title="testrunners.AddNewAttributeGroupTestCase" hash-for-method="feature(Add New Attribute Group Test Case)">feature(Add New Attribute Group Test Case)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Pre-Cofig_Test_Suite" title="testrunners.EditAttributeGroupTestCase" hash-for-method="feature(Edit Existing Attribute Group Test Case)">feature(Edit Existing Attribute Group Test Case)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -194,6 +184,16 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Pre-Cofig_Test_Suite" title="testrunners.DeleteAttributeTestCase" hash-for-method="feature(Delete existing Attribute Test Case)">feature(Delete existing Attribute Test Case)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Pre-Cofig_Test_Suite" title="testrunners.AddNewAttributeGroupTestCase" hash-for-method="feature(Add New Attribute Group Test Case)">feature(Add New Attribute Group Test Case)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Pre-Cofig_Test_Suite" title="testrunners.EditAttributeGroupTestCase" hash-for-method="feature(Edit Existing Attribute Group Test Case)">feature(Edit Existing Attribute Group Test Case)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Pre-Cofig_Test_Suite -->
                   </li>
                 </ul>
@@ -206,55 +206,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Pre-Cofig_Test_Suite" class="panel Pre-Cofig_Test_Suite">
-          <div class="suite-Pre-Cofig_Test_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testrunners.AddNewAttributeGroupTestCase</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="feature(Add New Attribute Group Test Case)">
-                  </a> <!-- feature(Add New Attribute Group Test Case) -->
-                  <span class="method-name">feature</span>
-                  <span class="parameters">(Add New Attribute Group Test Case)</span>
-                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.29.146&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52779}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 479f637a4cb9ec6baaa18daa902b9379
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.29.146&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52779}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 479f637a4cb9ec6baaa18daa902b9379
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
-	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
-	at ✽.And user search for attribute group name &quot;Create new Attribute group test&quot;(C:/Selenium/PreConfig/src/main/java/com/qa/features/addattributegroup.feature:19)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Runs Cucumber Feature)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Pre-Cofig_Test_Suite-class-failed -->
           <div class="suite-Pre-Cofig_Test_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
@@ -282,55 +233,6 @@ Caused by: cucumber.runtime.CucumberException: There are undefined steps
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
 	... 26 more
 ... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Runs Cucumber Feature)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Pre-Cofig_Test_Suite-class-failed -->
-          <div class="suite-Pre-Cofig_Test_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testrunners.EditAttributeGroupTestCase</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="feature(Edit Existing Attribute Group Test Case)">
-                  </a> <!-- feature(Edit Existing Attribute Group Test Case) -->
-                  <span class="method-name">feature</span>
-                  <span class="parameters">(Edit Existing Attribute Group Test Case)</span>
-                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.29.146&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52828}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0148d3613509003966579fe5b5ca99a9
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=109.0.5414.120)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.29.146&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52828}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0148d3613509003966579fe5b5ca99a9
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
-	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
-	at ✽.And user search for attribute group name &quot;Create new Attribute group test&quot;(C:/Selenium/PreConfig/src/main/java/com/qa/features/editattributegroup.feature:12)
-... Removed 32 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Feature)                  </em>
@@ -379,36 +281,52 @@ Caused by: java.lang.AssertionError
                   </a> <!-- feature(Delete Existing Attribute Group Test Case) -->
                   <span class="method-name">feature</span>
                   <span class="parameters">(Delete Existing Attribute Group Test Case)</span>
-                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.ElementNotInteractableException: element not interactable
+                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[6]/button[4]/i&quot;}
   (Session info: chrome=109.0.5414.120)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.29.146&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.1.170&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52869}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0e4cc43d67a0e2a4b964a508deb0ba1c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55708}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a3919d71486101e55975ca4c15823f46
+*** Element info: {Using=xpath, value=//div[6]/button[4]/i}
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[6]/button[4]/i&quot;}
   (Session info: chrome=109.0.5414.120)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.29.146&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+System info: host: &apos;DESKTOP-UHORISU&apos;, ip: &apos;192.168.1.170&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52869}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0e4cc43d67a0e2a4b964a508deb0ba1c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\RAJASE~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55708}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a3919d71486101e55975ca4c15823f46
+*** Element info: {Using=xpath, value=//div[6]/button[4]/i}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy18.sendKeys(Unknown Source)
-	at com.qa.pages.AttributesPage.search_attribute_group_name(AttributesPage.java:271)
-	at com.qa.stepDefinitions.PreCofigLibrary.user_search_for_attribute_group_name(PreCofigLibrary.java:569)
-	at ✽.And user search for attribute group name &quot;Edit Attribute group test&quot;(C:/Selenium/PreConfig/src/main/java/com/qa/features/deleteattributegroup.feature:12)
-... Removed 31 stack frames
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
+	at com.qa.pages.AttributesPage.click_delete_attribute_group(AttributesPage.java:340)
+	at com.qa.stepDefinitions.PreCofigLibrary.user_should_see_attribute_group_deleted(PreCofigLibrary.java:612)
+	at ✽.Then user should see attribute group deleted &quot;Edit Attribute group test&quot;(C:/Selenium/PreConfig/src/main/java/com/qa/features/deleteattributegroup.feature:16)
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Feature)                  </em>
@@ -563,6 +481,24 @@ Session ID: 0e4cc43d67a0e2a4b964a508deb0ba1c
           <div class="suite-Pre-Cofig_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+              <span class="class-name">testrunners.AddNewAttributeGroupTestCase</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="feature(Add New Attribute Group Test Case)">
+                  </a> <!-- feature(Add New Attribute Group Test Case) -->
+                  <span class="method-name">feature</span>
+                  <span class="parameters">(Add New Attribute Group Test Case)</span>
+                  <em>
+(Runs Cucumber Feature)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Pre-Cofig_Test_Suite-class-passed -->
+          <div class="suite-Pre-Cofig_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">testrunners.DeleteFunctionTestCase</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -572,6 +508,24 @@ Session ID: 0e4cc43d67a0e2a4b964a508deb0ba1c
                   </a> <!-- feature(Delete existing Function Test Case) -->
                   <span class="method-name">feature</span>
                   <span class="parameters">(Delete existing Function Test Case)</span>
+                  <em>
+(Runs Cucumber Feature)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Pre-Cofig_Test_Suite-class-passed -->
+          <div class="suite-Pre-Cofig_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testrunners.EditAttributeGroupTestCase</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="feature(Edit Existing Attribute Group Test Case)">
+                  </a> <!-- feature(Edit Existing Attribute Group Test Case) -->
+                  <span class="method-name">feature</span>
+                  <span class="parameters">(Edit Existing Attribute Group Test Case)</span>
                   <em>
 (Runs Cucumber Feature)                  </em>
                 </div> <!-- method-content -->
@@ -824,76 +778,76 @@ data.addRows(17);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'testrunners.EditAttributeTestCase')
-data.setCell(0, 3, 70578);
+data.setCell(0, 3, 70510);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'feature')
-data.setCell(1, 2, 'testrunners.AddNewAttributeGroupTestCase')
-data.setCell(1, 3, 66043);
+data.setCell(1, 2, 'testrunners.AddNewVerticalTestCase')
+data.setCell(1, 3, 68089);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'feature')
-data.setCell(2, 2, 'testrunners.EditVerticalTestCase')
-data.setCell(2, 3, 61668);
+data.setCell(2, 2, 'testrunners.EditAttributeGroupTestCase')
+data.setCell(2, 3, 66812);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'feature')
-data.setCell(3, 2, 'testrunners.EditNodeTypeTestcase')
-data.setCell(3, 3, 58115);
+data.setCell(3, 2, 'testrunners.EditVerticalTestCase')
+data.setCell(3, 3, 60391);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'feature')
 data.setCell(4, 2, 'testrunners.EditFunctionTestCase')
-data.setCell(4, 3, 57721);
+data.setCell(4, 3, 57760);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'feature')
-data.setCell(5, 2, 'testrunners.AddNewAttributeTestCase')
-data.setCell(5, 3, 54443);
+data.setCell(5, 2, 'testrunners.EditNodeTypeTestcase')
+data.setCell(5, 3, 57100);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'feature')
-data.setCell(6, 2, 'testrunners.LinkFunctionToVertical')
-data.setCell(6, 3, 52865);
+data.setCell(6, 2, 'testrunners.AddNewAttributeGroupTestCase')
+data.setCell(6, 3, 56757);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'feature')
-data.setCell(7, 2, 'testrunners.AddNewVerticalTestCase')
-data.setCell(7, 3, 52435);
+data.setCell(7, 2, 'testrunners.DeleteAttributeGroupTestCase')
+data.setCell(7, 3, 56643);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'feature')
-data.setCell(8, 2, 'testrunners.EditAttributeGroupTestCase')
-data.setCell(8, 3, 46691);
+data.setCell(8, 2, 'testrunners.AddNewAttributeTestCase')
+data.setCell(8, 3, 53968);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'feature')
-data.setCell(9, 2, 'testrunners.DeleteAttributeGroupTestCase')
-data.setCell(9, 3, 46067);
+data.setCell(9, 2, 'testrunners.LinkFunctionToVertical')
+data.setCell(9, 3, 52268);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'feature')
 data.setCell(10, 2, 'testrunners.DeleteAttributeTestCase')
-data.setCell(10, 3, 44875);
+data.setCell(10, 3, 43803);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'feature')
 data.setCell(11, 2, 'testrunners.DeleteNodeTypeTestCase')
-data.setCell(11, 3, 43652);
+data.setCell(11, 3, 42872);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'feature')
 data.setCell(12, 2, 'testrunners.DeleteFunctionTestCase')
-data.setCell(12, 3, 42403);
+data.setCell(12, 3, 41191);
 data.setCell(13, 0, 13)
 data.setCell(13, 1, 'feature')
 data.setCell(13, 2, 'testrunners.AddNewFunctionTestCase')
-data.setCell(13, 3, 41102);
+data.setCell(13, 3, 40741);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'feature')
 data.setCell(14, 2, 'testrunners.AddNewNodeTypeTestCase')
-data.setCell(14, 3, 39972);
+data.setCell(14, 3, 38230);
 data.setCell(15, 0, 15)
 data.setCell(15, 1, 'feature')
 data.setCell(15, 2, 'testrunners.LoginTestCase')
-data.setCell(15, 3, 17290);
+data.setCell(15, 3, 31998);
 data.setCell(16, 0, 16)
 data.setCell(16, 1, 'feature')
 data.setCell(16, 2, 'testrunners.DeleteVerticalTestCase')
-data.setCell(16, 3, 12941);
+data.setCell(16, 3, 12799);
 window.suiteTableData['Pre-Cofig_Test_Suite']= { tableData: data, tableDiv: 'times-div-Pre-Cofig_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 minutes</span>
+              <span class="suite-total-time">Total running time: 14 minutes</span>
               <div id="times-div-Pre-Cofig_Test_Suite">
               </div> <!-- times-div-Pre-Cofig_Test_Suite -->
             </div> <!-- times-div -->
@@ -926,261 +880,257 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Login Test Case)</span>
-                <span class="method-start">246 ms</span>
+                <span class="method-start">204 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">17537 ms</span>
+                <span class="method-start">32204 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.AddNewVerticalTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">18124 ms</span>
+                <span class="method-start">32442 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Add new Vertical Test Case)</span>
-                <span class="method-start">18166 ms</span>
+                <span class="method-start">32470 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">70603 ms</span>
+                <span class="method-start">100560 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.EditVerticalTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">70673 ms</span>
+                <span class="method-start">100610 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">feature(Edit existing Vertical Test Case)</span>
-                <span class="method-start">70692 ms</span>
+                <span class="method-start">100628 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">132363 ms</span>
+                <span class="method-start">161022 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.DeleteVerticalTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">132410 ms</span>
+                <span class="method-start">161083 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">feature(Delete existing Vertical Test Case)</span>
-                <span class="method-start">132427 ms</span>
+                <span class="method-start">161100 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">145370 ms</span>
+                <span class="method-start">173899 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.AddNewFunctionTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">145409 ms</span>
+                <span class="method-start">174026 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Add new Function Test Case)</span>
-                <span class="method-start">145418 ms</span>
+                <span class="method-start">174050 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">186522 ms</span>
+                <span class="method-start">214791 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.EditFunctionTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">186565 ms</span>
+                <span class="method-start">214839 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Edit existing Function Test Case)</span>
-                <span class="method-start">186575 ms</span>
+                <span class="method-start">214860 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">244297 ms</span>
+                <span class="method-start">272622 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.DeleteFunctionTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">244344 ms</span>
+                <span class="method-start">272674 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Delete existing Function Test Case)</span>
-                <span class="method-start">244353 ms</span>
+                <span class="method-start">272690 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">286759 ms</span>
+                <span class="method-start">313883 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.LinkFunctionToVertical</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">286814 ms</span>
+                <span class="method-start">313947 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Add Function to Vertical Test Case)</span>
-                <span class="method-start">286823 ms</span>
+                <span class="method-start">313963 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">339690 ms</span>
+                <span class="method-start">366236 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.AddNewNodeTypeTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">339737 ms</span>
+                <span class="method-start">366305 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Add new Node Type Test Case)</span>
-                <span class="method-start">339748 ms</span>
+                <span class="method-start">366321 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">379721 ms</span>
+                <span class="method-start">404552 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.EditNodeTypeTestcase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">379763 ms</span>
+                <span class="method-start">404596 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Edit existing Node Type Test Case)</span>
-                <span class="method-start">379774 ms</span>
+                <span class="method-start">404611 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">437889 ms</span>
+                <span class="method-start">461712 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.DeleteNodeTypeTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">437925 ms</span>
+                <span class="method-start">461750 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Delete existing Node Type Test Case)</span>
-                <span class="method-start">437936 ms</span>
+                <span class="method-start">461763 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">481589 ms</span>
+                <span class="method-start">504636 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.AddNewAttributeTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">481626 ms</span>
+                <span class="method-start">504680 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Add New Attribute Test Case)</span>
-                <span class="method-start">481638 ms</span>
+                <span class="method-start">504694 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">536082 ms</span>
+                <span class="method-start">558664 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.EditAttributeTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">536163 ms</span>
+                <span class="method-start">558701 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Edit Existing Attribute Test Case)</span>
-                <span class="method-start">536168 ms</span>
+                <span class="method-start">558717 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">606747 ms</span>
+                <span class="method-start">629228 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.DeleteAttributeTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">606797 ms</span>
+                <span class="method-start">629267 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature(Delete existing Attribute Test Case)</span>
-                <span class="method-start">606814 ms</span>
+                <span class="method-start">629284 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">651689 ms</span>
+                <span class="method-start">673088 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.AddNewAttributeGroupTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">651734 ms</span>
+                <span class="method-start">673132 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">feature(Add New Attribute Group Test Case)</span>
-                <span class="method-start">651745 ms</span>
+                <span class="method-start">673149 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">717790 ms</span>
+                <span class="method-start">729907 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.EditAttributeGroupTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">717841 ms</span>
+                <span class="method-start">729955 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">feature(Edit Existing Attribute Group Test Case)</span>
-                <span class="method-start">717850 ms</span>
+                <span class="method-start">729975 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">764544 ms</span>
+                <span class="method-start">796787 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testrunners.DeleteAttributeGroupTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">764594 ms</span>
+                <span class="method-start">796825 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">feature(Delete Existing Attribute Group Test Case)</span>
-                <span class="method-start">764601 ms</span>
+                <span class="method-start">796838 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">810669 ms</span>
+                <span class="method-start">853483 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
