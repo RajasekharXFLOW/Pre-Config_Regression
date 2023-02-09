@@ -189,10 +189,9 @@ public class PreCofigLibrary extends TestBase
 		verticalspage.search_vertical_name(vertical_name);
 	}
 
-	@When("^user click on delete vertical \"([^\"]*)\"$")
+	@When("^user click on delete vertical$")
 	public void user_click_on_delete_vertical() throws Throwable 
 	{
-		verticalspage = new VerticalsPageClass();
 		verticalspage.delete_vertical();
 	}
 

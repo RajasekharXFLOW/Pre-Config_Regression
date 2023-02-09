@@ -19,4 +19,4 @@ Feature: Delete Existing Attribute Group Test Case
     
     Examples:
     |attribute_group_name|
-    |Testing|
+    |Edit Attribute group test|
