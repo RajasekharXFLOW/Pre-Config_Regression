@@ -87,6 +87,10 @@
 			<class name="testrunners.DeleteAttributeGroupTestCase"></class>
 		</classes>
 	</test>
-	
+	<test name="Link Attribute to Attribute Group Test Case">
+		<classes>
+			<class name="testrunners.AddAttributeToGroupTestCase"></class>
+		</classes>
+	</test>
 	
 </suite>

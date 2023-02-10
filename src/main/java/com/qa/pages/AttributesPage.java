@@ -13,7 +13,11 @@ import com.qa.util.TestBase;
 
 public class AttributesPage extends TestBase
 {
+	
 	JavascriptExecutor js;
+	// Global Variable
+	
+	static String actual_attributes_count;
 	
 	// Locators
 	@FindBy(xpath="//a[@href='/app/attributes']")
@@ -72,6 +76,12 @@ public class AttributesPage extends TestBase
 	WebElement delete_att_group;
 	@FindBy(xpath="//div[2]/div/div/div[1]/div/input")
 	WebElement search_attribute_group_name;
+	
+	// Add Attribute to Group
+	@FindBy(xpath="//*[@role='cell' and @data-field='attribute_group_map_count']")
+	WebElement attribute_count;
+	@FindBy(xpath="//span[contains(@class,'chakra-checkbox__label')]")
+	List<WebElement> att_list;
 	
 	public AttributesPage()
 	{
@@ -363,10 +373,51 @@ public class AttributesPage extends TestBase
 			return false;
 		}
 	}
+	public void read_actual_attributes_count() throws InterruptedException
+	{
+		Thread.sleep(1000);
+		actual_attributes_count = attribute_count.getText();
+		System.out.println(actual_attributes_count);
+	}
 	
+	public void click_action_buttion_against_att_group() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",action_button);
+	}
 	
-	
-	
+	public void select_attribute_name(String attribute_name) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		
+		for(int i=0;i<att_list.size();i++)
+		{
+			//System.out.println(att_list.get(i).getText());
+			if(att_list.get(i).getText().contains(attribute_name))
+			{
+				att_list.get(i).click();
+				break;
+			}
+		}
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		att_group_tab.click();
+	}
+	public boolean isAttributeCountUpdated() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		String current_attribute_count = attribute_count.getText();
+		System.out.println(current_attribute_count);
+		Thread.sleep(1000);
+		if(actual_attributes_count.equals(current_attribute_count))
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+	}
 	
 	
 	

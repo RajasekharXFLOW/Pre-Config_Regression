@@ -299,27 +299,23 @@ public class PreCofigLibrary extends TestBase
 	@When("^user read the count of actual verticals linked to function$")
 	public void user_read_the_count_of_actual_verticals_linked_to_function() throws Throwable 
 	{
-		functionspage = new FunctionsPage();
 		functionspage.read_actual_ver_count();
 	}
 	@When("^user click action against function$")
 	public void user_click_action_against_function() throws Throwable 
 	{
-		functionspage = new FunctionsPage();
 		functionspage.click_action_buttion();
 	}
 
 	@When("^user select vertical \"([^\"]*)\"$")
 	public void user_select_vertical(String vertical_name) throws Throwable 
 	{
-		functionspage = new FunctionsPage();
 		functionspage.select_vertical_name(vertical_name);		
 	}
 
 	@When("^user click close the popup$")
 	public void user_click_close_the_popup() throws Throwable 
 	{
-		functionspage = new FunctionsPage();
 		functionspage.click_close_popup();
 	}
 
@@ -614,25 +610,26 @@ public class PreCofigLibrary extends TestBase
 	@When("^user read the count of no attributes against the attribute group$")
 	public void user_read_the_count_of_no_attributes_against_the_attribute_group() throws Throwable 
 	{
-	    
+	    att_page.read_actual_attributes_count();
 	}
 
 	@When("^user click actions against attribute group$")
 	public void user_click_actions_against_attribute_group() throws Throwable 
 	{
-	    
+	    att_page.click_action_buttion_against_att_group();
 	}
 
 	@When("^user select required attribute in popup window \"([^\"]*)\"$")
-	public void user_select_required_attribute_in_popup_window(String arg1) throws Throwable 
+	public void user_select_required_attribute_in_popup_window(String attribute_name) throws Throwable 
 	{
-	   
+	   att_page.select_attribute_name(attribute_name);
 	}
 
 	@Then("^user should see the count updated$")
 	public void user_should_see_the_count_updated() throws Throwable 
 	{
-	   
+	   boolean res = att_page.isAttributeCountUpdated();
+	   Assert.assertFalse(res);
 	}
 }	
 
