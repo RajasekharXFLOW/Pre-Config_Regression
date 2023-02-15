@@ -3,7 +3,6 @@ Feature: Add Function to Vertical Test Case
 
   @tag1
   	Scenario Outline: Add Function to Vertical Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on functions from menu
@@ -15,7 +14,6 @@ Feature: Add Function to Vertical Test Case
     When user search function "<function_name>"
     Then user should see the verticals count updated
     When user clik logout
-    And user click on close browser
     
     Examples:
     |function_name|vertical_name|

@@ -4,7 +4,6 @@ Feature: Edit Existing Attribute Test Case
 
   @tag1
   	Scenario Outline: Edit Existing Attribute Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on attribute tab
@@ -19,7 +18,6 @@ Feature: Edit Existing Attribute Test Case
     And user search for attribute name "<new_attribute_name>"
     Then user should see attribute created as "<new_attribute_name>"
     When user clik logout 
-    And user click on close browser
     
     Examples:
     |attribute_name|new_attribute_name|new_attribute_short_text|new_attribute_data_type|new_attribute_desc|new_default_value|

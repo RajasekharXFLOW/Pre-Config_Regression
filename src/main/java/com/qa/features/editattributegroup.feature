@@ -4,7 +4,6 @@ Feature: Edit Existing Attribute Group Test Case
 
   @tag1
   	Scenario Outline: Edit Existing Attribute Group Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on attribute tab
@@ -20,7 +19,6 @@ Feature: Edit Existing Attribute Group Test Case
     And user search for attribute group name "<new_attribute_group_name>"
     Then user should see attribute group created as "<new_attribute_group_name>"
     When user clik logout 
-    And user click on close browser
     
     Examples:
     |attribute_group_name|new_attribute_group_name|new_attribute_group_short_text|new_attribute_group_desc|new_node_type|

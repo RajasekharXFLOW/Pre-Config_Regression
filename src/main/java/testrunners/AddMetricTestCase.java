@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-//@RunWith(Cucumber.class)
+@RunWith(Cucumber.class)
 @CucumberOptions(features="C:/Selenium/PreConfig/src/main/java/com/qa/features/addmetric.feature",
 				glue="com/qa/stepDefinitions",dryRun=false,
 				plugin={"com.cucumber.listener.ExtentCucumberFormatter:reports/addmetric.html"},
@@ -14,7 +14,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				strict = true
 				)
 
-public class AddMetricTestCase extends AbstractTestNGCucumberTests
+public class AddMetricTestCase //extends AbstractTestNGCucumberTests
 {
 
 }

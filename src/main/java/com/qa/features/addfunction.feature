@@ -4,7 +4,6 @@ Feature: Add new Function Test Case
 
   @tag1
   	Scenario Outline: Create New Function Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on functions from menu
@@ -16,7 +15,6 @@ Feature: Add new Function Test Case
     When user search function "<function_name>"
     Then user should see function created as "<function_name>"
     When user clik logout
-    And user click on close browser
     
     Examples:
     |function_name|short_text|f_desc|

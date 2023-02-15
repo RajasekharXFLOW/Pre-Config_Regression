@@ -4,7 +4,6 @@ Feature: Manage Attribute Group Test Case
 
   @tag1
   	Scenario Outline: Manage Attribute Group Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on attribute tab
@@ -16,7 +15,6 @@ Feature: Manage Attribute Group Test Case
     And user search for attribute group name "<attribute_group_name>"
     Then user should see the count updated
     When user clik logout
-    And user click on close browser
     
     Examples:
     |attribute_group_name|attribute_name|

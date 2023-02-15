@@ -4,7 +4,6 @@ Feature: Add New Attribute Group Test Case
 
   @tag1
   	Scenario Outline: Create New Attribute Group Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on attribute tab
@@ -18,8 +17,7 @@ Feature: Add New Attribute Group Test Case
     When user click on attribute group tab
     And user search for attribute group name "<attribute_group_name>"
     Then user should see attribute group created as "<attribute_group_name>"
-    When user clik logout 
-    And user click on close browser
+    When user clik logout
     
     Examples:
     |attribute_group_name|attribute_group_short_text|attribute_group_desc|node_type|

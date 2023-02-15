@@ -9,6 +9,9 @@ import com.qa.pages.MetricsPage;
 import com.qa.pages.NodeTypePage;
 import com.qa.pages.VerticalsPageClass;
 import com.qa.util.TestBase;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -22,10 +25,18 @@ public class PreCofigLibrary extends TestBase
 	AttributesPage att_page;
 	MetricsPage metrics_page;
 	
+	   // To launch the Browser instance with URL
+	@Before
 	@Given("^user open browser with url$")
 	public void user_open_browser_with_url()
 	{
 		TestBase.intilization();
+	}
+	  // To close the Browser instance after every Test Case
+	@After
+	public void user_click_on_close_browser()
+	{
+	  TestBase.close_browser();
 	}
 
 	@Then("^user should see login page$")
@@ -56,10 +67,8 @@ public class PreCofigLibrary extends TestBase
 	}
 
 	@Then("^user click on close browser$")
-	public void user_click_on_close_browser()
-	{
-	   driver.close();
-	}
+	
+	
 	@When("^user click on add vertical$")
 	public void user_click_on_add_vertical() throws Throwable 
 	{

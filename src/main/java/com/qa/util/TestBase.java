@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
+import cucumber.api.java.After;
+
 public class TestBase
 {
 	public static WebDriver driver;
@@ -44,6 +46,12 @@ public class TestBase
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));	
 	}
+	
+	public static void close_browser()
+	{
+        // Close the browser and terminate the WebDriver session
+        driver.quit();
+    }
 	
 }
 

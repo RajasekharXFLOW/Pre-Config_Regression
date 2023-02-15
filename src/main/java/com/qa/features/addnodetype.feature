@@ -4,7 +4,6 @@ Feature: Add new Node Type Test Case
 
   @tag1
   	Scenario Outline: Create New Node Type Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on node type tab
@@ -16,7 +15,7 @@ Feature: Add new Node Type Test Case
     And user search for node type name "<node_name>"
     Then user should see node type created as "<node_name>"
     When user clik logout 
-    And user click on close browser
+    
     
     Examples:
     |node_name|short_text|node_desc|

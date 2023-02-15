@@ -4,7 +4,6 @@ Feature: Add new Metric Test Case
 
   @tag1
   	Scenario Outline: Create New Metric Test
-    Given user open browser with url
     Then user should see login page
     When user enter username as password as and click login
     When user click on metrics tab
@@ -18,10 +17,9 @@ Feature: Add new Metric Test Case
     When user search metric "<metric_name>"
     Then user should see metric created as "<metric_name>"
     When user clik logout
-    And user click on close browser
     
     Examples:
     |metric_type|metric_name|display_name|m_desc|att_group_dd|
-    |Test|Testing create new Metric feature|Test|Testing Add metric|Default Attribute|
+    |Test|Testing create new Metric feature 1|Test|Testing Add metric|Default Attribute|
     
     
