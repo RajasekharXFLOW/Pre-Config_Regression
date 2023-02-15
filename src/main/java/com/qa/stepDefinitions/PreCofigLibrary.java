@@ -5,6 +5,7 @@ import org.junit.Assert;
 import com.qa.pages.AttributesPage;
 import com.qa.pages.FunctionsPage;
 import com.qa.pages.LoginPage;
+import com.qa.pages.MetricsPage;
 import com.qa.pages.NodeTypePage;
 import com.qa.pages.VerticalsPageClass;
 import com.qa.util.TestBase;
@@ -19,6 +20,7 @@ public class PreCofigLibrary extends TestBase
 	FunctionsPage functionspage;
 	NodeTypePage nodetypepage;
 	AttributesPage att_page;
+	MetricsPage metrics_page;
 	
 	@Given("^user open browser with url$")
 	public void user_open_browser_with_url()
@@ -630,6 +632,67 @@ public class PreCofigLibrary extends TestBase
 	{
 	   boolean res = att_page.isAttributeCountUpdated();
 	   Assert.assertFalse(res);
+	}
+	@When("^user click on metrics tab$")
+	public void user_click_on_metrics_tab() throws Throwable 
+	{
+		metrics_page = new MetricsPage();
+		metrics_page.click_metrics_tab();
+	}
+
+	@When("^user click on add metric$")
+	public void user_click_on_add_metric() throws Throwable 
+	{
+	    metrics_page.click_add_metric_button();
+	}
+
+	@When("^user select metric type from dropdown \"([^\"]*)\"$")
+	public void user_select_metric_type_from_dropdown(String metric_type) throws Throwable 
+	{
+	    metrics_page.select_metric_type(metric_type);
+	}
+
+	@When("^user enter metric name as \"([^\"]*)\"$")
+	public void user_enter_metric_name_as(String metric_name) throws Throwable 
+	{
+	    metrics_page.enter_metric_name(metric_name);
+	}
+
+	@When("^user enter metric display name as \"([^\"]*)\"$")
+	public void user_enter_metric_display_name_as(String disply_name) throws Throwable 
+	{
+	    metrics_page.enter_metric_display_name(disply_name);
+	}
+
+	@When("^user enter metric description as \"([^\"]*)\"$")
+	public void user_enter_metric_description_as(String description) throws Throwable 
+	{
+	   metrics_page.enter_metric_description(description);
+	}
+
+	@When("^user select attribute group from dropdown \"([^\"]*)\"$")
+	public void user_select_attribute_group_from_dropdown(String att_group_name) throws Throwable 
+	{
+	    metrics_page.select_attribute_group_from_dropdown(att_group_name);
+	}
+
+	@When("^user clik on save metric$")
+	public void user_clik_on_save_metric() throws Throwable 
+	{
+	    metrics_page.click_save_metric();
+	}
+
+	@When("^user search metric \"([^\"]*)\"$")
+	public void user_search_metric(String metric_name) throws Throwable 
+	{
+	    metrics_page.search_metric_name(metric_name);
+	}
+
+	@Then("^user should see metric created as \"([^\"]*)\"$")
+	public void user_should_see_metric_created_as(String metric_name) throws Throwable 
+	{
+	    boolean res = metrics_page.is_Metric_Created(metric_name);
+	    Assert.assertTrue(res);
 	}
 }	
 
